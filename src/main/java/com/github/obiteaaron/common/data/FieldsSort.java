@@ -52,7 +52,8 @@ public class FieldsSort extends Sort {
         setOrders(orders);
     }
 
-    public FieldsSort(Sort sort) {
+    @SuppressWarnings("unchecked")
+	public FieldsSort(Sort sort) {
         this();
         if (sort == null) return;
         try {

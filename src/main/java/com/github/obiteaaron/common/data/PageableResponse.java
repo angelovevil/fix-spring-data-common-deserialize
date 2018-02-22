@@ -3,6 +3,8 @@ package com.github.obiteaaron.common.data;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 /**
  * Created by 刘一波 on 15/4/6.
  * E-Mail:obiteaaron@gmail.com
@@ -23,4 +25,9 @@ public class PageableResponse<T> extends FixPageImpl<T> {
     public PageableResponse(List<T> content) {
         super(content);
     }
+    
+    public PageableResponse(Page<T> page, PageableRequest pageable) {
+    	this(page.getContent(), pageable, page.getTotalElements());
+    }
+    
 }
